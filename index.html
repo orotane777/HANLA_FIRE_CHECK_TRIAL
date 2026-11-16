@@ -6,9 +6,9 @@
   <meta name="color-scheme" content="light">
   <meta name="referrer" content="no-referrer">
   <title>소화기 QR 촬영 · HANLA</title>
-  <script type="module" crossorigin src="./assets/main-DhQAeFDJ.js"></script>
-  <link rel="modulepreload" crossorigin href="./assets/trial-config-DdPrdTT6.js">
-  <link rel="stylesheet" crossorigin href="./assets/trial-config-DtQORixK.css">
+  <script type="module" crossorigin src="./assets/main-9-CHixT9.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/trial-config-CZU_2o5A.js">
+  <link rel="stylesheet" crossorigin href="./assets/trial-config-BOHEo6hf.css">
 </head>
 <body class="scanning">
   <main>
@@ -33,8 +33,43 @@
       <p id="sample-notice" class="sample-notice" hidden>샘플 체험 · 실제 소화기 사진이 아닌 합성 이미지입니다.</p>
       <p id="detected-code" class="code-value"></p>
       <figure class="preview"><img id="photo-preview" alt="QR과 충압계를 함께 촬영한 사진"><figcaption id="photo-info"></figcaption></figure>
-      <div class="review-actions"><button id="enlarge" class="secondary" type="button">사진 크게 보기</button><a class="primary button-link" href="#scan">다시 촬영</a></div>
-      <p class="review-note">아직 저장하지 않은 시험 사진입니다.<br>새로고침하거나 페이지를 닫으면 사라집니다.</p>
+      <div class="review-actions"><button id="enlarge" class="secondary" type="button">사진 크게 보기</button><a id="retake-link" class="secondary button-link" href="#scan">다시 촬영</a></div>
+      <section class="storage-panel" aria-label="사진 저장">
+        <p data-storage-status role="status"></p>
+        <form data-storage-login class="login-form" hidden>
+          <label for="review-email">시험 계정 이메일</label><input id="review-email" name="email" type="email" autocomplete="username" required>
+          <label for="review-password">비밀번호</label><input id="review-password" name="password" type="password" autocomplete="current-password" required>
+          <button class="secondary" type="submit">로그인</button>
+        </form>
+        <p data-auth-error class="storage-message" role="status"></p>
+        <div data-storage-account class="storage-account" hidden><span data-storage-email></span><button data-storage-logout class="secondary compact" type="button">로그아웃</button></div>
+        <button id="save-photo" class="primary" type="button" disabled>사진 저장</button>
+        <p id="save-status" class="storage-message" role="status"></p>
+        <a class="text-link" href="#records">저장한 사진 보기</a>
+      </section>
+      <p id="review-note" class="review-note">저장하기 전에는 새로고침하거나 페이지를 닫으면 사진이 사라집니다.</p>
+    </section>
+    <section id="records-screen" class="page records-screen" aria-labelledby="records-title" hidden>
+      <header class="header"><a class="brand" href="#scan">HANLA <span>소화기 점검</span></a><a class="text-link" href="#scan">촬영으로</a></header>
+      <h1 id="records-title">저장한 사진</h1>
+      <section id="records-login" class="storage-panel" aria-label="저장한 사진 로그인">
+        <p data-storage-status role="status"></p>
+        <form data-storage-login class="login-form" hidden>
+          <label for="records-email">시험 계정 이메일</label><input id="records-email" name="email" type="email" autocomplete="username" required>
+          <label for="records-password">비밀번호</label><input id="records-password" name="password" type="password" autocomplete="current-password" required>
+          <button class="secondary" type="submit">로그인</button>
+        </form>
+      </section>
+      <p data-auth-error class="storage-message" role="status"></p>
+      <div id="records-content" hidden>
+        <div class="storage-account"><span data-storage-email></span><button data-storage-logout class="secondary compact" type="button">로그아웃</button></div>
+        <p id="record-status" class="storage-message" role="status"></p>
+        <figure id="saved-record" class="preview" hidden>
+          <img id="saved-photo" alt="로그인한 계정으로 저장한 소화기 사진">
+          <figcaption><code id="saved-code"></code><br>등록 시각 <time id="saved-at"></time></figcaption>
+        </figure>
+        <button id="reload-records" class="secondary" type="button" disabled>다시 불러오기</button>
+      </div>
     </section>
   </main>
   <dialog id="viewer" aria-labelledby="viewer-title">

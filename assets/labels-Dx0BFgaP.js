@@ -1,0 +1,1 @@
+import{t as e}from"./trial-config-CZU_2o5A.js";document.querySelectorAll(`[data-test-id]`).forEach(t=>{t.textContent=e}),document.getElementById(`print`).addEventListener(`click`,()=>window.print());

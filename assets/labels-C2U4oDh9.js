@@ -1,1 +1,0 @@
-import{t as e}from"./trial-config-DdPrdTT6.js";document.querySelectorAll(`[data-test-id]`).forEach(t=>{t.textContent=e}),document.getElementById(`print`).addEventListener(`click`,()=>window.print());
