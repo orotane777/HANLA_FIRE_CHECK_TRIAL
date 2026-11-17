@@ -1,0 +1,1 @@
+import"./modulepreload-polyfill-P2Xu9kJm.js";import{t as e}from"./trial-config-C7ukGsiK.js";document.querySelectorAll(`[data-test-id]`).forEach(t=>{t.textContent=e}),document.getElementById(`print`).addEventListener(`click`,()=>window.print());

@@ -1,0 +1,1 @@
+var e=`FIRECHECK-TEST-001`;export{e as t};

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>스티커 부착 20초 시험 · HANLA</title>
+  <script type="module" crossorigin src="./assets/sticker-BE_ZQMhs.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/modulepreload-polyfill-P2Xu9kJm.js">
+  <link rel="modulepreload" crossorigin href="./assets/scan-geometry-B6Yt5pV2.js">
+  <link rel="stylesheet" crossorigin href="./assets/sticker-BCZwf7cu.css">
+</head>
+<body>
+  <main class="trial-page" id="trial-page" data-phase="idle">
+    <section class="camera-panel" aria-label="카메라와 촬영 구도 안내">
+      <video id="live-camera" autoplay muted playsinline></video>
+      <header><h1>스티커 부착 시험</h1><a href="./labels.html">시험 라벨</a></header>
+      <div class="composition-guide" aria-hidden="true">
+        <div class="gauge-guide"><span>압력계</span></div>
+        <div class="qr-frame" id="qr-frame"><span>QR</span></div>
+      </div>
+    </section>
+    <section class="controls-panel">
+      <div class="trial-heading"><div><p class="eyebrow">임시 부착 위치 비교용</p><h2 id="phase-status" role="status">준비 중</h2></div><strong id="remaining">20.0초</strong></div>
+      <div class="live-status"><p id="scan-status" role="status">카메라와 판독기를 준비합니다</p><p id="match-status">두 번 연속 구도 확인 대기</p></div>
+      <button id="start-trial" type="button" disabled>20초 시험 시작</button>
+      <button id="resume-camera" type="button" hidden>카메라 다시 켜기</button>
+      <p id="live-counts" aria-label="현재 측정 횟수"></p>
+    </section>
+    <section class="comparison-panel">
+      <p class="purpose">부착 위치를 바꿔 같은 거리·각도로 비교하세요. 월별 점검마다 하는 시험은 아닙니다.</p>
+      <div class="results" aria-label="이번 시험과 직전 완주 비교">
+        <article id="current-result"><h3>이번 시험</h3><div id="current-counts"></div></article>
+        <article id="previous-result"><h3>직전 완주</h3><div id="previous-counts"><p class="no-result">아직 없습니다</p></div></article>
+      </div>
+      <details>
+        <summary>횟수의 뜻 · 결과로 무엇을 바꾸나요?</summary>
+        <p>판독 시도는 측정 중 판독기로 보낸 영상 수입니다. 약 140ms 간격과 처리 속도에 따라 횟수가 달라집니다.</p>
+        <p>QR 읽힘은 시험 QR 하나를 반복해서 읽은 횟수입니다. 서로 다른 스티커 수가 아닙니다. 작거나 네모 밖이어도 읽히면 포함합니다.</p>
+        <p>구도 통과는 기존 촬영의 QR 크기·위치 조건을 충족한 횟수입니다. 두 번 연속 조건은 영상의 현재 상태로 따로 표시합니다. 오류·시간 초과도 시도에 포함합니다.</p>
+        <p>같은 휴대전화·브라우저·거리와 비슷한 각도 변화로 부착 위치·크기를 비교하세요. 읽힘은 많은데 구도 통과가 적으면 가이드와 QR 배치를 살펴볼 근거가 됩니다. 0회 인식의 원인은 이 숫자만으로 알 수 없습니다.</p>
+        <p>압력계 포함 여부와 눈금 가독성은 직접 확인하세요. 시험 자체가 인식을 개선하거나 부착 합격을 뜻하지 않습니다. 결과를 모아 부착 기준과 촬영 앱을 개선합니다.</p>
+        <p>사진·시험 결과는 저장하거나 전송하지 않습니다. 직전 완주 한 번만 페이지를 연 동안 비교합니다.</p>
+      </details>
+    </section>
+  </main>
+  <noscript>카메라 시험을 하려면 자바스크립트를 켜 주세요.</noscript>
+</body>
+</html>
